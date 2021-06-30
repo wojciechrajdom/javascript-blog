@@ -45,7 +45,7 @@ const titleClickHandler = function(){
     /* for each article */
     const articles = document.querySelectorAll(optArticleSelector);
 
-    html = html + linkHTML;
+    let html = '';
 
     for (let article of articles){  
       /* get the article id */
@@ -57,9 +57,9 @@ const titleClickHandler = function(){
       const getTitle = article.getAttribute(optTitleSelector);
       /* create HTML of the link */
       const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-      let html = '';
-      /* insert link into titleList */
       
+      /* insert link into titleList */
+      html = html + linkHTML;
       console.log = html;
     }  
     
