@@ -1,5 +1,3 @@
-const { active } = require("browser-sync");
-
 const titleClickHandler = function(){
   console.log('Link was clicked!');
   const clickedlink = this;
@@ -115,7 +113,7 @@ function tagClickHandler(event){
   /* make a new constant "href" and read the attribute "href" of the clicked element */
   const href = clickedElement.getAttribute('href');
   /* make a new constant "tag" and extract tag from the "href" constant */
-  const tag = href.replace('#tag-', '');
+  /*const tag = href.replace('#tag-', ''); */
   /* find all tag links with class active */
   const tagLinks = document.querySelectorAll('a.active[href^="#tag-"]');
   /* START LOOP: for each active tag link */
@@ -133,9 +131,9 @@ function tagClickHandler(event){
   /* END LOOP: for each found tag link */
   }
   /* execute function "generateTitleLinks" with article selector as argument */
-  
+  generateTitleLinks('[data-tags~="' + 'tag' + '"]');
 }
-generateTitleLinks('[data-tags~="' + 'tag' + '"]');
+
 
 function addClickListenersToTags(){
   /* find all links to tags */
@@ -183,7 +181,7 @@ function authorClickHandler(event){
   /* find all author links with class active */
   const authorLinks = document.querySelectorAll('a.active[href^="#author-"]');
   /* START LOOP: for each active author link remove class active */
-  for (let authorLink of authorLinks){
+  for(let authorLink of authorLinks){
     authorLink.classList.remove('active');
   }
   /* find all author links with "href" attribute equal to the "href" constant */
@@ -194,7 +192,9 @@ function authorClickHandler(event){
   }
   /* execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks('[data-author="' + author + '"]');
+
 }
+
 
 function addClickListenersToAuthors(){
   /* find all links to authors */
