@@ -51,7 +51,7 @@ function generateTitleLinks(customSelector = ''){
     /* get the article id */
     const articleId = article.getAttribute('id');
     /* find the title element */
-    const articleTitle = article.querySelector(optTitleSelector);
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
   
     /* get the title from the title element */
     
@@ -78,7 +78,7 @@ function generateTags(){
   /* START LOOP: for every article: */
   for(let article of articles){
     /* find tags wrapper */
-    const tagsWrapper = document.querySelectorAll(optArticleTagsSelector);
+    const tagsWrapper = article.querySelector(optArticleTagsSelector);
 
     /* make html variable with empty string */
     let html = '';
@@ -102,8 +102,8 @@ function generateTags(){
   }
  
 }
-
 generateTags();
+
 
 function tagClickHandler(event){
   /* prevent default action for this event */
