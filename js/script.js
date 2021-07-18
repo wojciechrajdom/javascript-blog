@@ -105,7 +105,7 @@ function generateTags(){
       }
       html = html + linkHTMLtag;
     /* END LOOP: for each tag */
-    }  
+    }
     /* insert HTML of all the links into the tags wrapper */
     tagsWrapper.innerHTML = html;
   /* END LOOP: for every article: */
@@ -113,20 +113,20 @@ function generateTags(){
   /* [NEW] find list of tags in right column */
   const tagList = document.querySelector(optTagsListSelector);
   console.log(tagList);
-}
-/* [NEW] create variable for all links HTML code */
-let allTagsHTML = '';
 
-/* [NEW] START LOOP: for each tag in allTags: */
-for(let tag in allTagsHTML){
+  /* [NEW] create variable for all links HTML code */
+  let allTagsHTML = '';
+
+  /* [NEW] START LOOP: for each tag in allTags: */
+  for(let tag in allTagsHTML){
   /* [NEW] generate code of a link and add it to allTagsHTML */
-  allTagsHTML += tag + ' (' + allTagsHTML[tag] + ') ';
+    allTagsHTML += tag + ' (' + allTagsHTML[tag] + ') ';
+  /* [NEW] END LOOP: for each tag in allTags: */
+  }
+  /*[NEW] add HTML from allTagsHTML to tagList */
+  optTagsListSelector.innerHTML = allTagsHTML;
 }
-/* [NEW] END LOOP: for each tag in allTags: */
 
-/*[NEW] add HTML from allTagsHTML to tagList */
-optTagsListSelector.innerHTML = allTagsHTML;
-  
 generateTags();
 
 
