@@ -45,7 +45,7 @@ function generateTitleLinks(customSelector = ''){
   
   /* for each article */
   const articles = document.querySelectorAll(optArticleSelector + customSelector);
-  console.log({customSelector});
+  
   let html = '';
 
   for (let article of articles){  
@@ -116,10 +116,10 @@ function generateTags(){
 
   /* [NEW] create variable for all links HTML code */
   let allTagsHTML = '';
-
+  
   /* [NEW] START LOOP: for each tag in allTags: */
   for(let tag in allTagsHTML){
-  /* [NEW] generate code of a link and add it to allTagsHTML */
+    /* [NEW] generate code of a link and add it to allTagsHTML */
     allTagsHTML += tag + ' (' + allTagsHTML[tag] + ') ';
   /* [NEW] END LOOP: for each tag in allTags: */
   }
