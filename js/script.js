@@ -112,19 +112,18 @@ function generateTags(){
   }
   /* [NEW] find list of tags in right column */
   const tagList = document.querySelector(optTagsListSelector);
-  console.log(tagList);
 
   /* [NEW] create variable for all links HTML code */
   let allTagsHTML = '';
   
   /* [NEW] START LOOP: for each tag in allTags: */
-  for(let tag in allTagsHTML){
+  for(let tagList in allTagsHTML){
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += tag + ' (' + allTagsHTML[tag] + ') ';
+    allTagsHTML += tagList + ' (' + allTagsHTML[tagList] + ') ';
   /* [NEW] END LOOP: for each tag in allTags: */
   }
   /*[NEW] add HTML from allTagsHTML to tagList */
-  optTagsListSelector.innerHTML = allTagsHTML;
+  tagList.innerHTML = allTagsHTML;
 }
 
 generateTags();
