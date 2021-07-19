@@ -94,8 +94,9 @@ function generateTags(){
     for(let tag of articleTagsArray){
 
       /* generate HTML of the link */
-      const linkHTMLtag = '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li> ';
+      const linkHTMLtag = '<a href="#tag-'+ articleTags +'">'+ articleTags +'</a> ';
       /* add generated code to html variable */
+      
       /* [NEW] check if this link is NOT already in allTags */
       if(!allTags[tag]) {
         /* [NEW] add tag to allTags object */
@@ -117,9 +118,9 @@ function generateTags(){
   let allTagsHTML = '';
   
   /* [NEW] START LOOP: for each tag in allTags: */
-  for(let tagList in allTagsHTML){
+  for(let tag in allTagsHTML){
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += tagList + ' (' + allTagsHTML[tagList] + ') ';
+    allTagsHTML += tag + ' (' + allTagsHTML[tag] + ') ';
   /* [NEW] END LOOP: for each tag in allTags: */
   }
   /*[NEW] add HTML from allTagsHTML to tagList */
