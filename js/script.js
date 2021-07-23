@@ -1,5 +1,5 @@
 const titleClickHandler = function(){
-  console.log('Link was clicked!');
+  
   const clickedlink = this;
   
   /*  remove class 'active' from all article links  */
@@ -94,9 +94,11 @@ function generateTags(){
     for(let tag of articleTagsArray){
 
       /* generate HTML of the link */
-      const linkHTML = '<a href="#tag-'+ tag +'">'+ tag +'</a> ';
+      let tagHTML = '<li><a href="#tag-'+ tag +'">'+ tag +'</a></li>';
+
+      
       /* add generated code to html variable */
-      html = html + linkHTML;
+      html = html + tagHTML;
       /* [NEW] check if this link is NOT already in allTags */
       if(!allTags[tag]) {
         /* [NEW] add tag to allTags object */
@@ -121,8 +123,8 @@ function generateTags(){
   for(let tag in allTags){
     console.log(tag);
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += tag + ' (' + allTags[tag] + ') ';
-    
+    allTagsHTML += '<a href="#tag-'+tag+'">'+tag+' (' + allTags[tag] + ') </a> ';
+
   /* [NEW] END LOOP: for each tag in allTags: */
   }
   /*[NEW] add HTML from allTagsHTML to tagList */
